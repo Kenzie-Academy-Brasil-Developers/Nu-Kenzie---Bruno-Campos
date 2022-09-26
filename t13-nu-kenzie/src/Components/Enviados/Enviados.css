@@ -1,0 +1,17 @@
+.Enviados{
+  width: 560px;
+  height: 87px;
+  background: #F8F9FA;  
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.Ul-Enviados{
+    height: 40vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: auto;
+}

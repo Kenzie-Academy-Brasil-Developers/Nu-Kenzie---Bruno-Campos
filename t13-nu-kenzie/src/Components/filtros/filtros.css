@@ -1,0 +1,16 @@
+button{
+    width: 69px;
+    height: 40px;
+    background: #E9ECEF;
+    border: 1.4px solid #E9ECEF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Div-Buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+

@@ -2,14 +2,21 @@ import { useState } from "react";
 import "./Envios.css";
 
 const Envios = ({ setProfiles }) => {
+  
   const [Descricao, setDescri] = useState("");
   const [Valor, setValor] = useState("");
   const [Select, setSelect] = useState("");
- const categories = ['Entrada','Depesa']
+ const categories = ["",'Entrada','Depesa']
+
+ 
+ 
+
+
+
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(Descricao, Valor, Select);
+    
     setProfiles((previousProfiles) => [
       ...previousProfiles,
       { Descricao, Valor, Select },

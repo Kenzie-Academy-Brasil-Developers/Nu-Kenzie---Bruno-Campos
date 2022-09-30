@@ -1,37 +1,29 @@
 import { useState } from "react";
 import "./Envios.css";
 
-const Envios = ({ setProfiles }) => {
-  
+const Envios = ({ setProfiles, categories }) => {
   const [Descricao, setDescri] = useState("");
   const [Valor, setValor] = useState("");
-  const [Select, setSelect] = useState("");
- const categories = ["",'Entrada','Depesa']
-
- 
- 
-
-
+  const [Select, setSelect] = useState(categories[0]);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    
     setProfiles((previousProfiles) => [
       ...previousProfiles,
-      { Descricao, Valor, Select },
+      { Descricao, Valor, categoria: Select },
     ]);
     setDescri("");
     setValor("");
-    setSelect("");
+    setSelect("Entrada");
   }
 
   return (
     <>
       <div className="Envios">
         <form className="Form-envios" onSubmit={handleSubmit}>
-          <div>
-            <h1 className="h1">Descrição</h1>
+          <div className="Formsub-envios">
+            <h1 className="h1 h1sent">Descrição</h1>
             <input
               className="Input-descricao"
               type="text"
@@ -39,23 +31,31 @@ const Envios = ({ setProfiles }) => {
               value={Descricao}
               onChange={(event) => setDescri(event.target.value)}
             />
-            <h2 className="h2">Ex:Comprar de roupas</h2>
+            <div className="h1sent">
+              <h2 className="h2">Ex:Comprar de roupas</h2>
+            </div>
           </div>
           <div className="Display-valor">
-            <div>
-              <h1 className="h1">Valor</h1>
+            <div className="Div__Value__Select">
+              <h1 className="h1 h1sent__Value__Select">Valor</h1>
               <input
                 className="Input-Valor"
                 type="text"
-                placeholder="1                    R$"
+                placeholder="1      R$"
                 value={Valor}
                 onChange={(event) => setValor(event.target.value)}
               />
             </div>
-            <div>
-              <h1 className="h1">Tipo de Valor</h1>
-              <select  onChange={(event) => setSelect(event.target.value)}defaultValue={Select}  className="Select" name="" id="">
-                {categories.map(category =>(
+            <div className="Div__Value__Select">
+              <h1 className="h1  h1sent__Value__Select">Tipo de Valor</h1>
+              <select
+                onChange={(event) => setSelect(event.target.value)}
+                defaultValue={Select}
+                className="Select"
+                name=""
+                id=""
+              >
+                {categories.map((category) => (
                   <option value={category}>{category}</option>
                 ))}
               </select>

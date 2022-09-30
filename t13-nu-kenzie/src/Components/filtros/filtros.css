@@ -1,16 +1,33 @@
-button{
-    width: 69px;
-    height: 40px;
-    background: #E9ECEF;
-    border: 1.4px solid #E9ECEF;
-    border-radius: 8px;
-    cursor: pointer;
+button {
+  width: 69px;
+  height: 40px;
+  background: var(---color-white3);
+  border: 1.4px solid var(---color-white3);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.Div-Buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
+.Div-Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.H1-Filtred {
+  font-size: 16px;
+}
+.Buttons-Filtred {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.Filtred-All:hover {
+  background-color: var(---color-primary);
 }
 
+@media (max-width: 1015px) {
+  .Buttons-Filtred {
+    width: 55%;
+  }
+}
